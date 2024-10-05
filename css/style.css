@@ -528,7 +528,7 @@ body{
 }
 
 .hero-header {
-    padding-top: 160px;
+    padding-top: 220px;
     padding-bottom: 100px;
     position: relative;
 }
@@ -897,6 +897,11 @@ body{
     .testimonial .testimonial-carousel .owl-nav .owl-next {
         margin-top: -250px;
         margin-right: -15px;
+    }
+    .hero-header {
+        padding-top: 60px;
+        padding-bottom: 100px;
+        position: relative;
     }
 }
 /*** Testimonial End ***/
