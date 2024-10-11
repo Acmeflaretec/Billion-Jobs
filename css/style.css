@@ -984,3 +984,91 @@ body{
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+.counter {
+    background-color: #333333;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.counter:hover {
+    transform: translateY(-10px);
+}
+
+.counter h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.counter p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.counter-value {
+    color: #15c1c3;
+}
+
+/* Counter Animation */
+@keyframes counterUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter-up {
+    animation: counterUp 1s ease-in-out forwards;
+}
+/* General styling for floating buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floating-buttons a {
+    text-decoration: none;
+    color: white;
+    background-color: #25D366; /* WhatsApp green color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.floating-buttons a i {
+    font-size: 24px;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+    background-color: #25D366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+/* Call button */
+.call-btn {
+    background-color: #0b79ee; /* Blue color for call button */
+}
+
+.call-btn:hover {
+    background-color: #0056b3;
+}

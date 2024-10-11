@@ -129,3 +129,47 @@
 
 })(jQuery);
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Function to animate the counters
+    function animateCounter() {
+        var counters = document.querySelectorAll('.counter-value');
+        var speed = 200; // Animation speed
+
+        counters.forEach(counter => {
+            const animate = () => {
+                const value = +counter.getAttribute('data-count');
+                const data = +counter.innerText;
+
+                const time = value / speed;
+                if (data < value) {
+                    counter.innerText = Math.ceil(data + time);
+                    setTimeout(animate, 10);
+                } else {
+                    counter.innerText = value;
+                }
+            };
+            animate();
+        });
+    }
+
+    // Use Intersection Observer to detect when the counter section is visible
+    const counterSection = document.getElementById('counter-section');
+    const options = {
+        root: null, // Use the viewport as the root
+        threshold: 0.2 // Trigger when 20% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Start the counter animation when the section is visible
+                animateCounter();
+                // Unobserve the section to prevent the counter from restarting
+                observer.unobserve(counterSection);
+            }
+        });
+    }, options);
+
+    // Start observing the counter section
+    observer.observe(counterSection);
+});
